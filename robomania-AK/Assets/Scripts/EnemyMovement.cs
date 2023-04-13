@@ -18,4 +18,12 @@ public class EnemyMovement : MonoBehaviour
         }
         
     }
+   private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            Vector2 jumpForce = new Vector2(0, yForce);
+            enemyRigidBody.AddForce(jumpForce); // adding a force
+        }
+    }
 }
